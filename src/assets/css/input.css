@@ -1,0 +1,165 @@
+@import "tailwindcss";
+
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: "Poppins", sans-serif;
+  background: url("../img/bg.jpg") no-repeat center center fixed;
+  background-size: cover;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: -1;
+}
+
+.projects_item {
+  border: 1px solid #333;
+}
+.projects_item .img {
+  overflow: hidden;
+  position: relative;
+  height: 280px;
+}
+
+.projects_item .img img {
+  transition: transform 0.5s ease-in-out;
+  height: 100%;
+  width: 100%;
+}
+
+.projects_item .img:hover img {
+  transform: scale(1.2);
+  opacity: 0.4;
+}
+
+.projects_item .img svg {
+  display: none;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 11;
+  transform: translate(-50%, -50%);
+}
+.projects_item .img:hover svg {
+  display: block;
+}
+
+/* Button styling */
+.filter-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.filter-btn {
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  background: #dddddd00;
+  transition: 0.3s;
+  border: 2px solid #333;
+}
+
+/* Active button style */
+.filter-btn.active {
+  background: orange;
+  color: white;
+}
+
+/* Grid of items */
+
+.item {
+  border-radius: 5px;
+  display: none;
+}
+
+/* Show when active */
+.item.show {
+  display: block;
+}
+
+.skill {
+  margin: 20px 0;
+}
+.skill-name {
+  font-weight: bold;
+}
+
+.progress {
+  background-color: #e0e0e0;
+  border-radius: 5px;
+  overflow: hidden;
+  width: 100%;
+  height: 10px;
+}
+.progress-bar {
+  height: 100%;
+  width: 0; /* Start at 0% */
+  transition: width 1s;
+}
+.html {
+  background-color: #ff5733;
+}
+.css {
+  background-color: #008cba;
+}
+.js {
+  background-color: #f7df1e;
+}
+
+.nav-link {
+  text-decoration: none;
+  padding: 10px 0px;
+  color: rgb(255, 255, 255);
+  transition: background-color 0.3s, text-decoration 0.3s;
+}
+.nav-link.active {
+  border-bottom: 2px solid rgb(255, 148, 71);
+  color: rgb(255, 148, 71);
+}
+.nav-link:hover {
+  color: rgb(255, 148, 71);
+}
+
+/*  */
+
+.nav_btn {
+  cursor: pointer;
+  display: none;
+}
+.menu_item {
+  display: flex;
+  flex-direction: row;
+}
+
+@media (max-width: 768px) {
+  .nav_btn.open.active {
+    display: block;
+  }
+  .nav_btn.close.active {
+    display: block;
+  }
+  .nav_btn.open {
+    display: none;
+  }
+  .menu_item {
+    display: none;
+  }
+  .menu_item.active {
+    display: flex;
+    flex-direction: column;
+  }
+}
+.logo {
+  font-family: "Playwrite HU", cursive;
+}
